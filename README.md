@@ -38,10 +38,10 @@ exp_config = {# define below to start
               "y_test": None,
               "tokens": None,
               
-<!--               # for gen. model 
-              "source": None,
-              "target": None,
-              "missing_rate": 0.5,
+              # The following are required when training a genrative model to simulate missing modalities
+              "source": None, # state the source
+              "target": None, # state the target
+              "missing_rate": 1, # configure missing rate to adjust how frequent the test set contains incomplte samples 
               
               # for get_src_tgt
               "src_train": {},
@@ -55,13 +55,20 @@ exp_config = {# define below to start
               "X_test_m": None,
               "X_test_s": None,
               # Models
-              "Generative": {} -->
+              "Generative": {}
               }
 
+# get the training, valid. and test data based on the required modalities
 get_train_valid_data(exp_config)
 get_test_data(exp_config)
 
+model_config = {
+    "batch_size": 32,
+    "lr": random.choice([0.0001 ,0.0005, 0.001]),
+    "hidden_size": random.choice([64, 128, 256, 512]),
+    "dropout": random.choice([0.2, 0.5, 0.7]),
+    "epochs": 150}
 
-
+train_ef(exp_config, model_config)
 
 ```

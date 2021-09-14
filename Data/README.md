@@ -1,1 +1,1 @@
-Datasets can be downloaded at ... and save the pkl files in this directory.
+Only MOSI is provided here due to MOSEI being too large.

@@ -50,10 +50,10 @@ class Decoder(nn.Module):
 
         
 
-class LSTM_AE(nn.Module):
+class LSTM_GEN(nn.Module):
 
     def __init__(self, encoder, decoder, enforce_rate):
-        super(LSTM_AE, self).__init__()
+        super(LSTM_GEN, self).__init__()
         self.encoder = encoder
         self.decoder = decoder
         self.enforce_rate = enforce_rate
@@ -76,7 +76,7 @@ class LSTM_AE(nn.Module):
 
         return output
 
-def train_ae(exp_config, src_to_tgt, model_config = None):
+def train_gen(exp_config, src_to_tgt, model_config = None):
 
     def train(model, src_train, tgt_train, loss_fn):
         epoch_loss = 0
@@ -156,7 +156,7 @@ def train_ae(exp_config, src_to_tgt, model_config = None):
         # build model
         encoder = Encoder(src_size, hidden_size).to(device)
         decoder = Decoder(tgt_size, hidden_size, dropout).to(device)
-        model = LSTM_AE(encoder, decoder, enforce_rate).to(device)
+        model = LSTM_Gen(encoder, decoder, enforce_rate).to(device)
         optimizer = optim.Adam(model.parameters(),lr=lr)
         loss_fn = nn.MSELoss()
         scheduler = ReduceLROnPlateau(optimizer,mode='min',patience=100,factor=0.5,verbose=True)

@@ -197,7 +197,7 @@ def sim_missing_features(config, src_to_tgt):
     src_sim = config["src_sim"][src_modality]
     start, end = config["ref_idx"][tgt_modality]
     X_test = config["X_test"]
-    autoencoder = config["Autoencoder"][src_to_tgt]
+    autoencoder = config["Generative"][src_to_tgt]
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     with torch.no_grad():
@@ -238,7 +238,8 @@ def evaluate_metrics(dataset, predictions, y_test):
         print("Binary Ac:", ba)
         print("Confusion Matrix:")
         print(confusion_matrix(binary_truth, binary_preds))
-
+        
+# taken out
 #     elif dataset == "iemocap":
 #         emos = ["Neutral", "Happy", "Sad", "Angry"]
 #         y_test = y_test.cpu().data.numpy()
@@ -261,7 +262,7 @@ def return_missing_features(config, src_to_tgt):
     src_sim = config["src_sim"][src_modality]
     start, end = config["ref_idx"][tgt_modality]
     X_test = config["X_test"]
-    autoencoder = config["Autoencoder"][src_to_tgt]
+    autoencoder = config["Generative"][src_to_tgt]
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     with torch.no_grad():

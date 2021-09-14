@@ -27,35 +27,10 @@ exp_config = {# define below to start
               "test": test_set,
               "modalities": ["text", "audio", "video"], # define the modalities to incoporate
               
-              # for get_train_valid_data
-              "X_train": None,
-              "y_train": None,
-              "X_valid": None,
-              "y_valid": None,
-              
-              # for get_test_data
-              "X_test": None,
-              "y_test": None,
-              "tokens": None,
-              
-              # The following are required when training a genrative model to simulate missing modalities
+              # The following are required only when training a genrative model to simulate missing modalities
               "source": None, # state the source
               "target": None, # state the target
-              "missing_rate": 1, # configure missing rate to adjust how frequent the test set contains incomplte samples 
-              
-              # for get_src_tgt
-              "src_train": {},
-              "tgt_train": {},
-              "src_valid": {},
-              "tgt_valid": {},
-              
-              # for simulate_missing_features
-              "src_sim": {}, 
-              "ref_idx": {},
-              "X_test_m": None,
-              "X_test_s": None,
-              # Models
-              "Generative": {}
+              "missing_rate": 1, # configure missing rate to adjust how frequent the test set contains incomplte samples
               }
 
 # get the training, valid. and test data based on the required modalities

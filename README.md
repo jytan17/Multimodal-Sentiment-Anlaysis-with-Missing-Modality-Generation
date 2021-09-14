@@ -5,9 +5,8 @@ An example usecase of training a tri-modal model with early fusion on MOSI:
 
 ```python
 
-
+# utils contains the custom datasets and other miscellaneous functions for data processing and evaluation
 from utils import *
-
 train_set = Multimodal_Datasets(data_path, "mosi", "train")
 valid_set = Multimodal_Datasets(data_path, "mosi", "valid")
 test_set = Multimodal_Datasets(data_path, "mosi", "test")
@@ -45,5 +44,4 @@ model_config = {
     "epochs": 150}
 
 train_ef(exp_config, model_config)
-
 ```

@@ -88,7 +88,7 @@ get_test_data(exp_config)
 get_sim_src_tgt(exp_config)
 
 # generative model config.
-model_config = {
+gen_model_config = {
     "batch_size": random.choice([32,64]),
     "lr": random.choice([0.0001, 0.0005, 0.001]),
     "hidden_size": random.choice([64, 128, 256]),
@@ -97,7 +97,7 @@ model_config = {
     "enforce_rate": random.choice([0, 0.2, 0.5, 0.7])
     }
 # prediction model config.
-gen_model_config = {
+model_config = {
     "batch_size": random.choice([32, 64]),
     "lr": random.choice([0.0001 ,0.0005, 0.001]),
     "hidden_size": random.choice([64, 128, 256, 512]),

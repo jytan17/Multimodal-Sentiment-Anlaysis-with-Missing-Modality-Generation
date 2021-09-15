@@ -4,7 +4,7 @@
 ## An example usecase of training a trimodal model with early fusion on MOSI:
 
 ```python
-
+import random
 # utils contains the custom datasets and other miscellaneous functions for data processing and evaluation
 from utils import *
 train_set = Multimodal_Datasets(data_path, "mosi", "train")
@@ -49,6 +49,7 @@ train_ef(exp_config, model_config)
 ## Another example usecase of training a trimodal model with early fusion on MOSEI and generative model for the video features:
 
 ```python
+import random
 # utils contains the custom datasets and other miscellaneous functions for data processing and evaluation
 from utils import *
 train_set = Multimodal_Datasets(data_path, "mosei", "train")

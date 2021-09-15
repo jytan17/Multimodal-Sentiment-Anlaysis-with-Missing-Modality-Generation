@@ -94,7 +94,7 @@ model_config = {
     "hidden_size": random.choice([64, 128, 256]),
     "dropout": random.choice([0.2, 0.5, 0.8]),
     "epochs": 100,
-    "enforce_rate": random.choice([0.2, 0.5, 0.7])
+    "enforce_rate": random.choice([0, 0.2, 0.5, 0.7])
     }
 # prediction model config.
 gen_model_config = {

@@ -72,8 +72,8 @@ exp_config = {# define below to start
               "modalities": ["text", "audio", "video"], # define the modalities to incoporate
               
               # The following are required only when training a genrative model to simulate missing modalities
-              "source": None, ["text", "video"] # state the source(s)
-              "target": None, ["audio"]  # state the target
+              "source": ["text", "video"], # state the source(s)
+              "target": ["audio"],  # state the target
               "missing_rate": 1, # configure missing rate to adjust how frequent the test set contains incomplte samples
               }
 

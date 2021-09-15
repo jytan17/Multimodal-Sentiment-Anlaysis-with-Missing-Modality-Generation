@@ -1,4 +1,4 @@
-
+import random
 # utils contains the custom datasets and other miscellaneous functions for data processing and evaluation
 from utils import *
 train_set = Multimodal_Datasets(data_path, "mosi", "train")

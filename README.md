@@ -60,7 +60,7 @@ test_set = Multimodal_Datasets(data_path, "mosei", "test")
 from Models.Generative import *
 from Models.LateFusion import *
 from Models.EarlyFusion import *
-from Models.MemoryFusion import *
+# from Models.MemoryFusion import *
 
 
 # create a dictionaty to carry all the necessary items for training
